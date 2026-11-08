@@ -31,7 +31,7 @@ python3 -m http.server 8000
 
 1. Buka **Settings → Pages** dalam repo ini.
 2. Di bawah *Build and deployment*, pilih **Source: Deploy from a branch**.
-3. Pilih branch `ccr-938020f9-kplkqi` dan folder **`/ (root)`**, kemudian klik **Save**.
+3. Pilih branch `main` dan folder **`/ (root)`**, kemudian klik **Save**.
 4. Tunggu 1–2 minit. Website akan berada di **https://dynopos.github.io/Ecosystem-/**
 
 Setiap kali ada perubahan di-push ke branch itu, GitHub Pages akan kemas kini website secara automatik.
