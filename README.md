@@ -27,11 +27,21 @@ python3 -m http.server 8000
 # buka http://localhost:8000
 ```
 
-## Deploy
+## Deploy (GitHub Pages)
 
-- **Netlify**: sambung repo ini, biarkan *build command* kosong, *publish directory* = `.` (sudah ditetapkan dalam `netlify.toml`). Atau seret folder ini ke https://app.netlify.com/drop.
-- **GitHub Pages**: Settings → Pages → *Deploy from a branch* → pilih branch dan folder `/ (root)`.
-- **Hosting cPanel**: muat naik semua fail ke `public_html/`.
+1. Buka **Settings → Pages** dalam repo ini.
+2. Di bawah *Build and deployment*, pilih **Source: Deploy from a branch**.
+3. Pilih branch `ccr-938020f9-kplkqi` dan folder **`/ (root)`**, kemudian klik **Save**.
+4. Tunggu 1–2 minit. Website akan berada di **https://dynopos.github.io/Ecosystem-/**
+
+Setiap kali ada perubahan di-push ke branch itu, GitHub Pages akan kemas kini website secara automatik.
+Fail `.nojekyll` memastikan GitHub menghidangkan fail apa adanya (tanpa Jekyll).
+
+**Domain sendiri (pilihan):** dalam Settings → Pages → *Custom domain*, masukkan domain (cth. `dynopro.my`),
+kemudian di DNS domain tambah rekod `CNAME www → dynopos.github.io` (atau rekod A ke IP GitHub Pages untuk domain utama).
+Tandakan **Enforce HTTPS** selepas sijil siap.
+
+Pilihan lain: Netlify (`netlify.toml` sudah disediakan) atau muat naik semua fail ke `public_html/` di hosting cPanel.
 
 ## Kemas kini kandungan
 

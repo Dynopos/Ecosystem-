@@ -6,23 +6,35 @@
   <title>Halaman tidak ditemui — DYNOPRO</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#090b14">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Halaman ini berdiri sendiri (tiada fail luar) supaya berfungsi pada mana-mana
+       kedalaman URL, termasuk GitHub Pages (/Ecosystem-/...) dan domain sendiri. -->
   <style>
-    .notfound { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 20px; }
-    .notfound img { width: 140px; height: 140px; border-radius: 50%; }
-    .notfound h1 { font-size: clamp(40px, 8vw, 72px); margin: 20px 0 8px; letter-spacing: -2px; }
-    .notfound p { color: var(--muted); margin: 0 0 28px; }
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;padding:40px 20px;
+      font-family:Arial,Helvetica,sans-serif;color:#eef1ff;background:#090b14;
+      background-image:radial-gradient(ellipse at 10% 22%,#30195645,transparent 45%),radial-gradient(ellipse at 95% 50%,#09285350,transparent 40%)}
+    .brand{font-size:13px;font-weight:900;letter-spacing:4px;color:#ad91ff}
+    h1{font-size:clamp(56px,12vw,110px);margin:16px 0 4px;letter-spacing:-3px;line-height:1;
+      background:linear-gradient(115deg,#c588ff 10%,#8f76ff 45%,#48c8ff 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    p{color:#a7adc5;margin:0 0 28px}
+    a{display:inline-flex;gap:14px;padding:13px 21px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;color:#fff;
+      border:1px solid #a089ff;background:linear-gradient(115deg,#8644e6,#464fe0 65%,#1786d1);box-shadow:0 8px 30px #6a40db40}
+    a:focus-visible{outline:3px solid #9060ef;outline-offset:4px}
   </style>
 </head>
 <body>
-  <main class="notfound">
-    <div>
-      <img src="/assets/img/dynopro-logo.webp" alt="Logo DYNOPRO" width="140" height="140">
-      <h1>404</h1>
-      <p>Maaf, halaman yang anda cari tidak ditemui.</p>
-      <a class="btn primary" href="/">Kembali ke laman utama <span aria-hidden="true">↗</span></a>
-    </div>
+  <main>
+    <div class="brand">DYNOPRO</div>
+    <h1>404</h1>
+    <p>Maaf, halaman yang anda cari tidak ditemui.</p>
+    <a id="home" href="/">Kembali ke laman utama <span aria-hidden="true">↗</span></a>
   </main>
+  <script>
+    // GitHub Pages (projek): laman utama berada di /<nama-repo>/
+    if (/\.github\.io$/.test(location.hostname)) {
+      var seg = location.pathname.split('/')[1];
+      if (seg) document.getElementById('home').href = '/' + seg + '/';
+    }
+  </script>
 </body>
 </html>
