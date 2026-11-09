@@ -529,6 +529,7 @@ h2 {
 }
 .card-link span { color: var(--violet-2); }
 .card-link:hover { color: #fff; }
+.card-link-sub { margin-top: 12px; padding-top: 12px; }
 
 .empty {
   display: none;
